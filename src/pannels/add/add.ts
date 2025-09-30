@@ -2,10 +2,10 @@ import * as vscode from 'vscode';
 import { getWebViewURI, getActiveColumn } from "../../util/index";
 
 export function newAddCommand(context: vscode.ExtensionContext): vscode.Disposable {
-    const addCommand = vscode.commands.registerCommand('pubsubClient.addConnection', () => {
+    const addCommand = vscode.commands.registerCommand('pubsubClient.addSubscription', () => {
 		const panel = vscode.window.createWebviewPanel(
-			"pubsubClient.addConnectionPannel",
-			"Add Connection",
+			"pubsubClient.addSubscriptionPannel",
+			"Add Subscription",
 			getActiveColumn(),
 			{enableScripts: true}
 		);
@@ -26,11 +26,6 @@ function getWebviewContent(context: vscode.ExtensionContext, panel: vscode.Webvi
 </head>
 
 <body>
-   
-    <script>
-    console.log("ooogga")
-    </script>
     <vscode-button>Button</vscode-button>
-
 </html>`;
 }

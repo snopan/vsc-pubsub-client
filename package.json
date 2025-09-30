@@ -24,16 +24,16 @@
     "views": {
       "pubsubClient": [
         {
-          "id": "pubsubClient.connections",
-          "name": "Connections",
+          "id": "pubsubClient.subscriptions",
+          "name": "Subscriptions",
           "icon": "media/pubsub.svg",
-          "contextualTitle": "Connections"
+          "contextualTitle": "Subscriptions"
         }
       ]
     },
     "commands": [
       {
-        "command": "pubsubClient.addConnection",
+        "command": "pubsubClient.addSubscription",
         "title": "Add",
         "icon": "$(add)"
       }
@@ -41,16 +41,16 @@
     "menus": {
       "view/title": [
         {
-          "command": "pubsubClient.addConnection",
+          "command": "pubsubClient.addSubscription",
           "group": "navigation",
-          "when": "view == pubsubClient.connections"
+          "when": "view == pubsubClient.subscriptions"
         }
       ]
     },
     "viewsWelcome": [
       {
-        "view": "pubsubClient.connections",
-        "contents": "No pubsub connection found.\n[Add Connection](command:pubsubClient.addConnection)"
+        "view": "pubsubClient.subscriptions",
+        "contents": "No pubsub subscriptions found.\n[Add Subscription](command:pubsubClient.addSubscription)"
       }
     ]
   },
