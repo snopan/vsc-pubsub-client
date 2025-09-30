@@ -12,10 +12,45 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pubsubClient",
+          "title": "PubSub Client",
+          "icon": "/media/pubsub.svg"
+        }
+      ]
+    },
+    "views": {
+      "pubsubClient": [
+        {
+          "id": "pubsubClient.connections",
+          "name": "Connections",
+          "icon": "media/pubsub.svg",
+          "contextualTitle": "Connections"
+        }
+      ]
+    },  
     "commands": [
       {
-        "command": "pubsub-client.helloWorld",
-        "title": "Hello World"
+        "command": "pubsubClient.addConnection",
+        "title": "Add",
+        "icon": "$(add)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "pubsubClient.addConnection",
+          "group": "navigation",
+          "when": "view == pubsubClient.connections"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "pubsubClient.connections",
+        "contents": "No pubsub connection found.\n[Add Connection](command:pubsubClient.addConnection)"
       }
     ]
   },
